@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+
+        int k = 2;
+        if(nums.size() < 2) return 1;
+
+        for(int i = 2; i < nums.size(); i++){
+            // check if nums[i] is fit for the nums[k]'s position
+            if(nums[k-2] != nums[i]){
+                nums[k++] = nums[i];
+            }
+        }
+
+        return k;
+    }
+};
